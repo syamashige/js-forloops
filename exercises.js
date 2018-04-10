@@ -40,8 +40,16 @@ The value at 2 is "Jefferson.
 The value at 3 is "Madison.
 The value at 4 is Monroe.
 
-Next, console.log the length of the array.
+Next, console.log the length of the array. 
+*/
+var presidents = ["Washington", "Adams", "Jefferson", "Madison", "Monroe"];
 
+for (var i = 0; i < presidents.length; i++) {
+  console.log("The value at " + i + " is " + presidents[i]);
+}
+
+
+/*
 3-A) Create a function named leaders which will take in a parameter: `person`.
    @param Datatype: String `person`
  
@@ -50,6 +58,14 @@ This function will iterate through the person parameter and console.log the foll
 "President person was a great leader."
 */
 
+function leaders (person) {
+  for (var i = 0; i < person.length; i++) {
+    //return "President " + person[i] + " was a great leader.";
+    console.log("President " + person[i] + " was a great leader.");
+  }
+}
+//console.log(leaders(presidents)); <-- this adds an undefined at the end of the loop
+leaders(presidents);
 
 /* 4) Line Number
 Declare a variable named `stringOfNumbers` and assign its value to an empty string. 
