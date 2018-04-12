@@ -63,6 +63,7 @@ function leaders (person) {
     //return "President " + person[i] + " was a great leader.";
     console.log("President " + person[i] + " was a great leader.");
   }
+  return person;
 }
 //console.log(leaders(presidents)); <-- this adds an undefined at the end of the loop
 leaders(presidents);
@@ -88,12 +89,14 @@ Console.log your results.
 
 var evenNumArr = [];
 
-for (var i = 0; i <=50; i++) {
+for (var i = 0; i <100; i++) {
   if (i%2 === 0) {
+    console.log(i); //console.log(i) just to check/test the condition // list of even numbers
     evenNumArr.push(i);
   }
 }
 console.log(evenNumArr);
+console.log(evenNumArr.length);
 
 /* 6) Up the Odds
 Declare a variable named `oddSum` and assign it to the Number value 0.
@@ -104,7 +107,7 @@ Console.log your results.
  
 var oddSum = 0;
 
-for (var i = 1; i <= 50; i++) {
+for (var i = 1; i < 100; i++) {
   if (i%2 === 1) {
     oddSum += i;
     //console.log(i);
@@ -205,6 +208,23 @@ Declare a variable named `topQuote` and assign it to a String value of your favo
 Write a function that will iterate through the string value and return the longest word in that quote. Console.log your result.
 */
 
+var topQuote = "favorite one line quote";
+//var longestWord = 0;
+
+function longestWord (string) {
+  var str = string.split (" ");
+  var longest = 0;
+  var word = null;
+
+  for (var i = 0; i < str.length; i++) {
+    if (longest < str[i].length){
+      longest = str[i].length;
+      word = str[i];
+    }
+  }
+  return word;
+}
+console.log(longestWord(topQuote));
 
 
 /* 12) Puppet Master
@@ -216,7 +236,23 @@ Write a function named `generateArrayOfStrings` which takes a single argument `s
 
 */
 
+var miscStorage = [ [], "Carrots", 9, "Beets", {}, {name: "Todd B."}, "Mush"];
+//var stringArray = [];
 
+/*function generateArrayOfStrings (storage) {
+  var stringArray = [];
+  for (var i = 0; i < storage.length; i++) {
+    if (storage[i === " "]) {
+     stringArray.push(storage[i]);
+    }
+    //stringArray.push(strorage[i]);
+  }
+  return stringArray;
+}
+//console.log(stringArray);
+
+console.log(generateArrayOfStrings(miscStorage));
+*/
 
 /* 13) All Grown Up 
 Write a function that will capitalize the first letter in each word in the phrase below. The function will console.log the message: "I've Lived A Life That's Full. I've Traveled Each And Every Highway. But More, Much More Than This. I Did It My Way."  
@@ -224,6 +260,14 @@ Write a function that will capitalize the first letter in each word in the phras
 
 var myWay = "i've lived a life that's full, i've traveled each and every highway. but more, much more than this. i did it my way.";
 
+function firstLetter (str) {
+  var str = str.split(" ");
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(" ");
+}
+console.log(firstLetter(myWay));
 
 
 /* 14) Sightseeing
@@ -247,4 +291,14 @@ The function will iterate through the `cohort` argument and check each student's
 If the `enrolled` property is set to `true` then change that student's `graduated` property to `true`. Otherwise, if `enrolled` is set to `false` then change `enrolled` to `true` leaving `graduated` alone and unchanged.
 Console.log your result.
 */
+
+var currentCohort = [];
+
+function graduateAndSetNewClass (cohort) {
+  for (var i = 0; i < cohort.length; i++) {
+    if (enrolled === true) {
+
+    }
+  }
+}
 
